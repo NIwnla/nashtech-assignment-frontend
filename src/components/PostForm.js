@@ -9,7 +9,7 @@ export default function PostForm(props) {
             title: props?.value?.title,
             body: props?.value?.body
         })
-    })
+    },[])
     const SubmitButton = ({ form, children }) => {
         const [submittable, setSubmittable] = React.useState(false);
         // Watch all values

@@ -15,7 +15,7 @@ export default function PostDetails(props){
         };
 
         fetchPost();
-    });
+    },[]);
 
     return (
         <Descriptions

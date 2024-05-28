@@ -3,10 +3,18 @@ import axios from 'axios';
 const BASE_URL = 'http://localhost:3000/posts';
 
 // Function to handle GET requests to fetch all posts
-const getPosts = async () => {
+const getPosts = async ({ page = 1, limit = 10, sort = '', order = '', search = '' } = {}) => {
     try {
-        const response = await axios.get(BASE_URL);
-        return response.data;
+        const response = await axios.get(BASE_URL, {
+            params: {
+                _page: page,
+                _per_page: limit,
+                _sort: order ? sort : '',
+                _order: order,
+                _search: search,
+            },
+        });
+        return response.data.data
     } catch (error) {
         console.error('Error fetching posts:', error);
         throw error;

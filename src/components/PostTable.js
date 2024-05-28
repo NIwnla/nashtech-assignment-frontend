@@ -2,15 +2,10 @@ import { Table, Tag } from 'antd';
 import { Link } from 'react-router-dom';
 export default function PostTable(props) {
     const { Column } = Table
-    // const onChange = (pagination, filters, sorter, extra) => {
-    //     console.log('params', pagination, filters, sorter, extra);
-    // };
-
-
     return (
         <Table
-            dataSource={props.data}
-            // onChange={onChange}
+            dataSource={props?.data}
+            onChange={props?.onChange}
             showSorterTooltip={{
                 target: 'sorter-icon',
             }}

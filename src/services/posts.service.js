@@ -1,7 +1,7 @@
 import { getPosts, getPostById, createPost, updatePost, deletePost } from "../httpClient/httpsClient";
-const fetchAllPosts = async () => {
+const fetchAllPosts = async (params) => {
     try {
-        return await getPosts();
+        return await getPosts(params);
     } catch (error) {
         console.error('Error fetching all posts in service:', error);
         throw error;
